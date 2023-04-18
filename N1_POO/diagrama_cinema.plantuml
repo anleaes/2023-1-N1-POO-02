@@ -23,34 +23,5 @@ class Filme{
     + construtor(titulo, sinopse, genero, classificacao, diretor, elenco)
 }
 
-class Sessao{
-    - sala: String
-    - horario: String
-    - duracao: Time
-    - tipo: Float
-    - quantidadeoAssentos: Int
-    + construtor(sala, horario, duracao, precoIngresso, numeroAssentos)
-}
-
-class Assento{
-    - numero: Int
-    - fila: String
-    - tipo: String
-    - valor: Float
-    + construtor(numero, fila, tipo, valor)
-}
-
-class Ingresso{
-    - serial: Int
-    - total: Float
-    + construtor(serial, total)
-}
-
-Ingresso <-- User
-Ingresso <-- Filme
-Ingresso <-- Sessao
-Ingresso <-- Assento
-
-
 
 @enduml
