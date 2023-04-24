@@ -23,5 +23,13 @@ class Filme{
     + construtor(titulo, sinopse, genero, classificacao, diretor, elenco)
 }
 
+class Assento{
+    - numero: Int
+    - fila: String
+    - tipo: String
+    - valor: Float
+    + construtor(numero, fila, tipo, valor)
+}
+
 
 @enduml
