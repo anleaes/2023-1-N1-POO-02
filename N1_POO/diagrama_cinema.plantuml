@@ -5,13 +5,14 @@ title Diagrama de Classes - Ingresso de Cinema
 
 class User{
     - email: String
-    - senha: String
     - cpf: String
     - nome: String
     - telefone: String
     - endereco: String
     - dataNascimento: Date
-    + construtor(email, senha, cpf, telefone, endereco, dataNascimento)
+    + construtor(email, cpf, telefone, endereco, dataNascimento)
+    + consultar (cpf, dataNascimento)
+    + cadastrar (email, cpf, nome, telefone, endereco, dataNascimento)
 }
 
 class Filme{
@@ -21,7 +22,53 @@ class Filme{
     - classificacao: Int
     - elenco: String
     + construtor(titulo, sinopse, genero, classificacao, diretor, elenco)
+    + cadastrar(titulo, sinopse, genero, classificacao, elento)
+    + cosultar(titulo)
 }
+
+
+class Sessao{
+    - sala: Int
+    - horario: Time
+    - duracao: Time
+    - quantidadeoAssentos: Int
+    + construtor(sala, horario, duracao, quantidadeAssentos)
+    + cadastar(sala, horario, duracao, quantidadeAssentos)
+}
+
+class Assento{
+    - numero: Int
+    - fila: String
+    + construtor(numero, fila)
+    + consultar (disponibilidade de assento)
+}
+
+class Ingresso{
+    - serial: Int
+    - valor: Float
+    - assento: Assento
+    - sessao: Sessao
+    - filme: Filme
+    - user: User
+    + construtor(serial, total)
+    + comprar (ingresso, user, filme, sessao, assento, valor )
+}
+
+class Compra{
+    - tipo: Int
+    - valorTotal: Float
+    - quantidadeIngresso: Int
+    - ingresso: Ingresso
+    + construtor(tipo, valorTotal, quantidadeIngresso)
+    + pagar (ingresso)
+}
+
+
+Ingresso <-- User
+Ingresso <-- Filme
+Ingresso <-- Sessao
+Ingresso <-- Assento
+Ingresso --> Compra
 
 
 @enduml
